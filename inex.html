@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 50px;
+        }
+    </style>
+    <script>
+        function welcome(){
+            event.preventDefault();
+            let name = document.getElementById("name");
+            let ans = document.getElementById("ans");
+            n = name.value;
+            if(n == "")
+            {
+                ans.innerHTML = "Enter Name";
+            }
+            else if(n.trim() == "")
+                
+            {
+                ans.innerHTML = "Name should not have only empty spaces";
+            }
+            else if(! n.match(/^[a-zA-Z ]+$/))
+            {
+                ans.innerHTML = "Only alphabets are allowed";
+            }
+            else{
+                let d = new Date();
+                let h = d.getHours;
+                if(h<12)
+                {
+                    ans.innerHTML = "Good Morning" + n;
+                }
+                else if(h<16)
+                {
+                    ans.innerHTML = "Good Afternoon" + n;
+                }
+                else{
+                    ans.innerHTML = "Good Evening" + n;
+                }
+            }
+            
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <form onsubmit="welcome()">
+            <h1>Welcome Application 3</h1>
+            <input type="text" placeholder="Enter name" id="name">
+            <br><br>
+            <input type="submit" value="click me">
+            <h1 id="ans"></h1>
+        </form>
+    </center>
+</body>
+</html>
